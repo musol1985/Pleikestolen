@@ -248,11 +248,13 @@ public class Celda extends Node{
      }
      
      public void removeDinamico(Dinamico d){
+         dao.cogerDinamico(d.dao.id);
          elementos.onRemoveDinamico(d);
      }
      
      public Dinamico removeDinamico(String id){
          Dinamico d=elementos.getDinamico(id);
+         dao.cogerDinamico(d.dao.id);
          elementos.onRemoveDinamico(d);
          return d;
      }
@@ -277,5 +279,14 @@ public class Celda extends Node{
 
          DinamicoDAO dao=this.dao.addDinamico(getTerreno().getM().player.getWorldTranslation().add(0,1,0), cosa.tipo.name(), cosa.tipo, cosa.vida, cantidad);
          return elementos.addDinamico(dao, true);         
+     }
+     
+     /**
+      * Evento de que un jugador ha soltado un dinamico
+      * @param d 
+      */
+     public void onSoltarDinamico(DinamicoDAO d){
+         this.dao.addDinamico(d);
+         elementos.addDinamico(d, false);
      }
 }

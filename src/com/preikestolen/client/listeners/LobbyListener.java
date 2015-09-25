@@ -40,7 +40,7 @@ public class LobbyListener extends MensajesListener<Client>{
     }
   
     public void onError(Client source, MsgError m){                
-        System.out.println("on error!!"+m.id);
+        System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!------------->>>>>>>>>>>>>>>>>>>>on error!!"+m.id);
     }
     
     public void onListaMundos(Client source, MsgMundosLista m){
@@ -56,14 +56,8 @@ public class LobbyListener extends MensajesListener<Client>{
             mundoTemp=mundo;
             //TODO hacer toda la logica de aqui
             System.out.println("Se selecciona el mundo 0 por defecto."+mundo.getID());
-            for(JugadorDAO j:mundo.getJugadores()){
-                if(j.getNombre().equals(game.getJugador().getNombre())){
-                    game.setJugador(j);
-                    break;
-                }
-            }
             
-            source.send(new MsgStart(mundo.getID()));
+            //source.send(new MsgStart(mundo.getID()));
         }
     }
     

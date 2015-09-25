@@ -64,7 +64,11 @@ public class CeldaDAO extends Persistable{
 
     public void setTime(long time) {
         this.time = time;
-    }        
+    }       
+    
+    public void setTime(){
+        this.time=System.currentTimeMillis();
+    }
     
     public void generar(Fractales f, Vector2 pos){
         change();
@@ -145,7 +149,7 @@ public class CeldaDAO extends Persistable{
     
     
     private boolean generarArboles(Vector3f pos, int indice, Random rnd){
-        boolean generar=rnd.nextInt(10000)>9950;
+        boolean generar=rnd.nextInt(10000)>8950;
         
         if(generar && pos.y>25){
             String id=pos.toString()+"_tree_"+indice;
@@ -283,6 +287,10 @@ public class CeldaDAO extends Persistable{
         DinamicoDAO din=new DinamicoDAO(pos.toString()+"_"+id+"_"+dinamicos.size(), p, tipo, 0, 1, vida, cantidad);
         dinamicos.put(din.id, din);
         return din;
+    }
+    
+    public void addDinamico(DinamicoDAO din){
+        dinamicos.put(din.id, din);
     }
     
     public DinamicoDAO cogerDinamico(String id){

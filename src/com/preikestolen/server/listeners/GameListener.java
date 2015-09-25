@@ -17,10 +17,12 @@ import com.preikestolen.net.msg.game.MsgGetCeldas;
 import com.preikestolen.net.msg.game.MsgMatarEstatico;
 import com.preikestolen.net.msg.game.MsgOnCelda;
 import com.preikestolen.net.msg.game.MsgOnMatarEstatico;
+import com.preikestolen.net.msg.game.MsgOnSoltarDinamico;
 import com.preikestolen.net.msg.game.MsgPosition;
 import com.preikestolen.net.msg.game.MsgSetTool;
 import com.preikestolen.net.msg.game.MsgSoltarDinamico;
 import com.preikestolen.persist.dao.CeldaDAO;
+import com.preikestolen.persist.dao.DinamicoDAO;
 import com.preikestolen.persist.dao.JugadorDAO;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -104,8 +106,9 @@ public class GameListener extends MensajesListener<HostedConnection>{
     public void onSoltarDinamico(HostedConnection source, MsgSoltarDinamico m){
         try{
             JugadorDAO jugador=source.getAttribute(JugadorDAO.ID);
-            server.getService().soltarDinamico(m.celda, m.id, jugador, m.pilaId);
-            server.getNet().broadcast(Filters.notIn(source), m);
+            DinamicoDAO d=server.getService().soltarDinamico(m.celda, m.id, jugador, m.pilaId);
+            
+            server.getNet().broadcast(Filters.notIn(source), new MsgOnSoltarDinamico(m.celda, d));
         }catch(Exception e){
             log.log(Level.SEVERE, "Error al coger dinamico: {0}", e.getMessage());
             e.printStackTrace();

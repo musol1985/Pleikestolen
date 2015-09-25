@@ -56,7 +56,7 @@ public class Game extends Preikestolen implements ClientStateListener{
             app.setPuerto(args[1]);
             app.setNick(args[2]);
         }
-        app.setNick("Edu");
+        app.setNick("Edu2");
         
         AppSettings set=new AppSettings(true);
         set.setHeight(720);

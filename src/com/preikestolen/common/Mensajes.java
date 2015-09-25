@@ -13,6 +13,7 @@ import com.preikestolen.net.msg.game.MsgGetCeldas;
 import com.preikestolen.net.msg.game.MsgMatarEstatico;
 import com.preikestolen.net.msg.game.MsgOnCelda;
 import com.preikestolen.net.msg.game.MsgOnMatarEstatico;
+import com.preikestolen.net.msg.game.MsgOnSoltarDinamico;
 import com.preikestolen.net.msg.game.MsgPosition;
 import com.preikestolen.net.msg.game.MsgSetTool;
 import com.preikestolen.net.msg.game.MsgSoltarDinamico;
@@ -62,6 +63,8 @@ public class Mensajes {
         Serializer.registerClass(MsgCogerDinamico.class);
         Serializer.registerClass(MsgSetTool.class);
         Serializer.registerClass(MsgSoltarDinamico.class);
+        Serializer.registerClass(MsgOnSoltarDinamico.class);
+        
         
         
         Serializer.registerClass(MundoDAO.class);

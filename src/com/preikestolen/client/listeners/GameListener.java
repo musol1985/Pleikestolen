@@ -15,6 +15,7 @@ import com.preikestolen.net.msg.game.MsgDinamicoPosition;
 import com.preikestolen.net.msg.game.MsgDinamicoSleep;
 import com.preikestolen.net.msg.game.MsgOnCelda;
 import com.preikestolen.net.msg.game.MsgOnMatarEstatico;
+import com.preikestolen.net.msg.game.MsgOnSoltarDinamico;
 import com.preikestolen.net.msg.game.MsgPosition;
 import com.preikestolen.net.msg.game.MsgSetTool;
 import com.preikestolen.net.msg.game.MsgSoltarDinamico;
@@ -155,12 +156,15 @@ public class GameListener extends MensajesListener<Client>{
         });
     }
     
-    public void onSoltarDinamico(Client client, final MsgSoltarDinamico m){  
-        /*game.enqueue(new Callable<Boolean>() {
-            public Boolean call() throws Exception {
-                game.getMundoClient().onNetAccion(m);
-                return true;
-            }
-        }); */      
+    public void onSoltarDinamico(Client client, final MsgOnSoltarDinamico m){  
+        final Celda c=game.getMundoClient().terreno.getCelda(m.celda);
+        if(c!=null){
+            game.enqueue(new Callable<Boolean>() {
+                public Boolean call() throws Exception {
+                    c.onSoltarDinamico(m.dinamico);
+                    return true;
+                }
+            });
+        }   
     }
 }
