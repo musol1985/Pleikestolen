@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nifty-controls xmlns="http://nifty-gui.lessvoid.com/nifty-gui">
+    
+    <style id="nifty-button#panel">
+        <attributes backgroundImage="button/button.png"
+        imageMode="sprite-resize:100,23,0,2,96,2,2,2,96,2,19,2,96,2,2"
+        paddingLeft="7px"
+        paddingRight="7px"
+        width="100px"
+        height="23px"
+        childLayout="center"
+        visibleToMouse="true" />
+    </style>
+    
+    
+    <controlDefinition style="nifty-button"
+                       name="button"
+                       controller="com.preikestolen.gui.elementos.PilaCosasGUI">
+        <panel style="#panel" focusable="true" visibleToMouse="true" >
+            <interact onClick="next()" />
+            <text id="#text" style="#text" text="$label"/>
+        </panel>
+    </controlDefinition>
+</nifty-controls>

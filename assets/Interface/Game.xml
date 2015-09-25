@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<nifty xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://nifty-gui.lessvoid.com/nifty-gui" xsi:schemaLocation="https://raw.githubusercontent.com/void256/nifty-gui/1.4/nifty-core/src/main/resources/nifty.xsd https://raw.githubusercontent.com/void256/nifty-gui/1.4/nifty-core/src/main/resources/nifty.xsd">
+    <useControls filename="Interface/Pila.xml"/>
+    <screen id="start" controller="com.preikestolen.gui.GameGUI1">
+        <layer id="layer" childLayout="center">
+            <panel id="panel" childLayout="center" backgroundColor="#f60f" visibleToMouse="true" width="100%" valign="center" align="center" height="100%">
+                <control name="button" id="theButton" label="OK"/>
+            </panel>
+        </layer>
+    </screen>
+</nifty>

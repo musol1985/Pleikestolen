@@ -1,0 +1,34 @@
+Material My Material : MatDefs/TerrainLighting2.j3md {
+     MaterialParameters {
+        DiffuseMap_1 : Repeat Textures/Terrain/desert.jpg
+        DiffuseMap_0_scale : 32.0
+        DiffuseMap_1_scale : 32.0
+        DiffuseMap_2 : Repeat Textures/Terrain/Dirt_2.JPG
+        DiffuseMap_2_scale : 32.0
+        DiffuseMap_3 : Repeat Textures/Terrain/GroundGrass01.png
+        DiffuseMap_3_scale : 32.0
+        DiffuseMap_4_scale : 32.0
+        Shininess : 1.0
+        isTerrainGrid : false
+        DiffuseMap : Repeat Textures/Terrain/grass.jpg
+        DiffuseMap_6_scale : 32.0
+        DiffuseMap_5_scale : 32.0
+        DiffuseMap_11_scale : 32.0
+        DiffuseMap_10_scale : 32.0
+        DiffuseMap_9_scale : 32.0
+        DiffuseMap_8_scale : 32.0
+        DiffuseMap_7_scale : 32.0
+        DiffuseMap_4 : Repeat Textures/Terrain/desert.jpg
+        DiffuseMap_5 : Repeat Textures/Terrain/grass.jpg
+        DiffuseMap_6 : Repeat Textures/Terrain/grass2.jpg
+        DiffuseMap_7 : Repeat Textures/Terrain/desert.jpg
+        Altura : 20.0
+        AlturaMitad : 18.0
+     }
+    AdditionalRenderState {
+      FaceCull Off
+      DepthWrite On
+      DepthTest On
+        ColorWrite On
+    }
+}

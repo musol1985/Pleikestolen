@@ -1,0 +1,15 @@
+Material My Material : Common/MatDefs/Light/Lighting.j3md {
+     MaterialParameters {
+        DiffuseMap : Flip Textures/estaticos/Foliage01.png
+     }
+    AdditionalRenderState {
+      Blend Alpha
+    
+
+      FaceCull Off
+      DepthTest On
+      AlphaTestFalloff 0.5
+      DepthWrite On
+      Wireframe Off
+    }
+}
